@@ -6,16 +6,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     
     $myusername = $_POST['username'];
     $mypassword = md5($_POST['password']);
+    echo $username;
+    echo $password;
     
     $sql = "SELECT id_usuario FROM usuario WHERE usuario = '$myusername' and contrasenha = '$mypassword'";
     $result = $pdo->prepare($sql);
     $result->execute();
     $count = $result->fetchColumn();
-    if($count == 1) {
+    if($count >= 1) {
         $_SESSION['login_user'] = $myusername;        
         header("location: index.php");
     }else {
-        $error = "Your Login Name or Password is invalid";
+        $error = "Acceso incorrecto. Verifique los datos y vuelva a intentar.";
     }
 }
 ?>

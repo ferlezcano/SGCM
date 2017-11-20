@@ -1,7 +1,6 @@
 <?php
 $title = "Inicio";
 include '../source/app/session.php';
-echo "pasé session";
 include 'inc/header.php';
 ?>
 

@@ -1,7 +1,7 @@
 <?php
 $title = "Listado de pacientes";
 include '../source/app/session.php';
-echo "pasé session";
+include '../source/app/auth.php';
 include 'inc/header.php';
 ?>
 

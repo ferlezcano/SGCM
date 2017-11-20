@@ -1,7 +1,8 @@
 <?php
-include('config.php');
+include ('config.php');
 session_start();
 
+// Verifica que tenga sesión iniciada
 $user_check = $_SESSION['login_user'];
 
 $ses_sql = "SELECT usuario FROM usuario WHERE usuario = '$user_check'";
@@ -11,7 +12,7 @@ $row = $result->fetch();
 
 $login_session = $row["username"];
 
-if(!isset($_SESSION['login_user'])){
+if (! isset($_SESSION['login_user'])) {
     header("location: Login.php");
 }
 ?>
